@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+	padding: 0%;
+	box-sizing: border-box;
+	background: #303438;
+}
+
+/* scrollbar Start */
+::webkit-scrollbar {
+	width: 10px;
+}
+::webkit-scrollbar-track {
+	background: #00cc99;
+	border-radius: 50px;
+}
+::webkit-scrollbar-thumb {
+	background: #6600ff;
+	border-radius: 50px;
+}
+/*<------- scrollbar End -------> */
+
+.card {
+	width: 200px;
+	height: 50px;
+}
+
+.main {
+	margin: 2.5%;
+}
