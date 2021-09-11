@@ -5,48 +5,51 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import { Typography } from "@material-ui/core";
+
 const useStyles = makeStyles({
 	root: {
-		maxWidth: 300,
+		boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.25)",
 		width: 200,
-		borderRadius: 16,
+		margin: 70,
+		height: 250,
+		borderRadius: 10,
+	},
+
+	data: {
+		justifyContent: "center",
+		fontFamily: "robota",
 	},
 });
 
-export default function MediaCard() {
+export default function ShowCard(props) {
 	const classes = useStyles();
 	return (
-		<div className="main">
+		<div>
 			<Card className={classes.root}>
 				<CardActionArea>
 					<CardMedia
 						className={classes.media}
-						height="100"
-						width="50"
+						height="150"
+						width="70"
 						component="img"
-						alt="naruto"
-						image="https://picsum.photos/200"
-						title="anime"
+						alt={props.alt}
+						image={props.img}
 					/>
 					<CardContent>
-						<Typography gutterBottom variant="h5" component="h2">
-							NAME
-						</Typography>
-						<Typography variant="body2" color="textSecondary" component="p">
-							Content
-						</Typography>
+						<CardActions className={classes.data}>
+							<Typography
+								style={{ justifyContent: "center", fontWeight: "bold" }}
+							>
+								{props.name}
+							</Typography>
+						</CardActions>
+
+						<a className="btn btn-dark link" href={props.link} role="button">
+							Read it
+						</a>
 					</CardContent>
 				</CardActionArea>
-				<CardActions>
-					<Button size="small" color="primary">
-						Share
-					</Button>
-					<Button size="small" color="primary">
-						Learn More
-					</Button>
-				</CardActions>
 			</Card>
 		</div>
 	);

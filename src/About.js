@@ -18,18 +18,16 @@ import ListItemText from "@material-ui/core/ListItemText";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StarsIcon from "@material-ui/icons/Stars";
 import InfoIcon from "@material-ui/icons/Info";
-import ShowCard from "./Card";
-import Api from "./Api";
-import Footer from "./Footer";
-
 import { NavLink } from "react-router-dom";
+import Footer from "./components/Footer";
+import Accord from "./components/Accord";
+
 const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: "flex",
 		boxSizing: "border-box",
-		
 	},
 
 	appBar: {
@@ -84,30 +82,15 @@ const useStyles = makeStyles((theme) => ({
 		...theme.mixins.toolbar,
 	},
 	content: {
-		height: "auto",
-		display: "flex",
-		justifyContent: "left",
-		flexDirection: "row",
+		justifyContent: "center",
 		Width: "100%",
 		flexWrap: "wrap",
 		padding: 20,
+		margin: 50,
 	},
 }));
 
-const ncard = (val, id) => {
-	return (
-		<ShowCard
-			key={id}
-			img={val.img}
-			name={val.name}
-			alt={val.alt}
-			author={val.author}
-			link={val.link}
-		/>
-	);
-};
-
-export default function MiniDrawer() {
+export default function About() {
 	const classes = useStyles();
 	const theme = useTheme();
 	const [open, setOpen] = React.useState(false);
@@ -143,7 +126,7 @@ export default function MiniDrawer() {
 							<MenuIcon />
 						</IconButton>
 						<Typography variant="h6" noWrap>
-							MangaKap
+							About
 						</Typography>
 					</Toolbar>
 				</AppBar>
@@ -186,7 +169,7 @@ export default function MiniDrawer() {
 										</NavLink>
 									</li>
 									<li>
-										<NavLink to="/about" exact activeClassName="active" >
+										<NavLink to="/about" exact activeClassName="active">
 											<InfoIcon /> About us
 										</NavLink>
 									</li>
@@ -197,12 +180,14 @@ export default function MiniDrawer() {
 					</List>
 					<Divider />
 				</Drawer>
-				<main className={classes.content}>
-					<div className={classes.toolbar} />
-					{Api.map(ncard)}
-				</main>
 			</div>
-			<Footer />
+			<main className={classes.content}>
+				<div className={classes.toolbar} />
+				<Accord />
+			</main>
+			<div>
+				<Footer />
+			</div>
 		</div>
 	);
 }

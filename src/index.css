@@ -1,29 +1,51 @@
-body {
+html {
 	margin: 0;
-	padding: 0%;
-	box-sizing: border-box;
-	background: #303438;
+	padding: 0;
+	box-sizing: border-box !important;
 }
 
-/* scrollbar Start */
-::webkit-scrollbar {
-	width: 10px;
+.link {
+	text-decoration: none !important;
+	width: 60px;
+	height: 35px;
+	text-align: center;
+	border: 2px solid rgb(133, 30, 192);
+	border-radius: 10px;
+	padding: 5px;
+	margin-left: 30%;
 }
-::webkit-scrollbar-track {
-	background: #00cc99;
-	border-radius: 50px;
+.btn {
+	text-align: center;
 }
-::webkit-scrollbar-thumb {
-	background: #6600ff;
-	border-radius: 50px;
+.foot {
+	height: 30px;
+	width: 100%;
+	background-color: #a4508b;
+	background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+	text-align: center;
+	border: 1px solid #33d1c4;
 }
-/*<------- scrollbar End -------> */
 
-.card {
-	width: 200px;
-	height: 50px;
+.foot a {
+	display: inline-flex;
+	flex-direction: row;
+	margin: 1.5px 15px;
+	text-decoration: none;
+	list-style: none;
+	color: #100c08;
 }
-
-.main {
-	margin: 2.5%;
+.list li {
+	
+	list-style: none;
+	margin-left: -28px;
+	font-weight: bold;
+	padding-top: 20px;
+}
+.active {
+	color: #100c08;
+	list-style: none;
+	font-weight: bold;
+}
+a {
+	text-decoration: none;
 }
