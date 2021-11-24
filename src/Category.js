@@ -21,170 +21,170 @@ import InfoIcon from "@material-ui/icons/Info";
 import { NavLink } from "react-router-dom";
 const drawerWidth = 200;
 const useStyles = makeStyles((theme) => ({
-	root: {
-		display: "flex",
-		boxSizing: "border-box",
-	},
+  root: {
+    display: "flex",
+    boxSizing: "border-box",
+  },
 
-	appBar: {
-		backgroundColor: "#10b6d7",
-		zIndex: theme.zIndex.drawer + 1,
-		transition: theme.transitions.create(["width", "margin"], {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.leavingScreen,
-		}),
-	},
-	appBarShift: {
-		backgroundColor: "#0b9ab6",
-		marginLeft: drawerWidth,
-		width: `calc(100% - ${drawerWidth}px)`,
-		transition: theme.transitions.create(["width", "margin"], {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.enteringScreen,
-		}),
-	},
-	menuButton: {
-		marginRight: 10,
-	},
-	hide: {
-		display: "none",
-	},
-	drawer: {
-		width: drawerWidth,
-		flexShrink: 0,
-		whiteSpace: "wrap",
-	},
-	drawerOpen: {
-		width: drawerWidth,
-		backgroundColor: "#b2beb5",
-		transition: theme.transitions.create("width", {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.enteringScreen,
-		}),
-	},
-	drawerClose: {
-		transition: theme.transitions.create("width", {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.leavingScreen,
-		}),
-		overflowX: "hidden",
-		width: theme.spacing(7) + 1,
-		[theme.breakpoints.up("sm")]: {
-			width: theme.spacing(6) + 1,
-		},
-	},
-	toolbar: {
-		// necessary for content to be below app bar
-		...theme.mixins.toolbar,
-	},
-	content: {
-		height: "auto",
-		display: "flex",
-		justifyContent: "left",
-		flexDirection: "row",
-		Width: "100%",
-		flexWrap: "wrap",
-		padding: 20,
-	},
+  appBar: {
+    backgroundColor: "#10b6d7",
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    backgroundColor: "#0b9ab6",
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginRight: 10,
+  },
+  hide: {
+    display: "none",
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 2,
+    whiteSpace: "wrap",
+  },
+  drawerOpen: {
+    width: drawerWidth,
+    backgroundColor: "#b2beb5",
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerClose: {
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    overflowX: "hidden",
+    width: theme.spacing(7) + 1,
+    [theme.breakpoints.up("sm")]: {
+      width: theme.spacing(6) + 1,
+    },
+  },
+  toolbar: {
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+  },
+  content: {
+    height: "auto",
+    display: "flex",
+    justifyContent: "left",
+    flexDirection: "row",
+    Width: "100%",
+    flexWrap: "wrap",
+    padding: 20,
+  }, 
 }));
 
 export default function Category() {
-	const classes = useStyles();
-	const theme = useTheme();
-	const [open, setOpen] = React.useState(false);
+  const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
 
-	const handleDrawerOpen = () => {
-		setOpen(true);
-	};
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
 
-	const handleDrawerClose = () => {
-		setOpen(false);
-	};
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
-	return (
-		<div className={classes.father}>
-			<div className={classes.root}>
-				<CssBaseline />
-				<AppBar
-					position="fixed"
-					className={clsx(classes.appBar, {
-						[classes.appBarShift]: open,
-					})}
-				>
-					<Toolbar>
-						<IconButton
-							color="inherit"
-							aria-label="open drawer"
-							onClick={handleDrawerOpen}
-							edge="start"
-							className={clsx(classes.menuButton, {
-								[classes.hide]: open,
-							})}
-						>
-							<MenuIcon />
-						</IconButton>
-						<Typography variant="h6" noWrap>
-							CATEGORY
+  return (
+    <div className={classes.father}>
+      <div className={classes.root}>
+        <CssBaseline />
+        <AppBar
+          position="fixed"
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: open,
+          })}
+        >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              className={clsx(classes.menuButton, {
+                [classes.hide]: open,
+              })}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap>
+              CATEGORY
 						</Typography>
-					</Toolbar>
-				</AppBar>
-				<Drawer
-					variant="permanent"
-					className={clsx(classes.drawer, {
-						[classes.drawerOpen]: open,
-						[classes.drawerClose]: !open,
-					})}
-					classes={{
-						paper: clsx({
-							[classes.drawerOpen]: open,
-							[classes.drawerClose]: !open,
-						}),
-					}}
-				>
-					<div className={classes.toolbar}>
-						<IconButton onClick={handleDrawerClose}>
-							{theme.direction === "rtl" ? (
-								<ChevronRightIcon />
-							) : (
-								<ChevronLeftIcon />
-							)}
-						</IconButton>
-					</div>
-					<Divider />
-					<List>
-						<ListItem>
-							<ListItemIcon>
-								<ul className="list">
-									<li>
-										<NavLink to="/category" exact activeClassName="active">
-											<LibraryBooksIcon />
-											Category
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          className={clsx(classes.drawer, {
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open,
+          })}
+          classes={{
+            paper: clsx({
+              [classes.drawerOpen]: open,
+              [classes.drawerClose]: !open,
+            }),
+          }}
+        >
+          <div className={classes.toolbar}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === "rtl" ? (
+                <ChevronRightIcon />
+              ) : (
+                  <ChevronLeftIcon />
+                )}
+            </IconButton>
+          </div>
+          <Divider />
+          <List>
+            <ListItem>
+              <ListItemIcon>
+                <ul className="list">
+                  <li>
+                    <NavLink to="/category" exact activeClassName="active">
+                      <LibraryBooksIcon />
+                        Category
 										</NavLink>
-									</li>
-									<li>
-										<NavLink to="/top" exact activeClassName="active">
-											<StarsIcon /> Top
+                  </li>
+                  <li>
+                    <NavLink to="/top" exact activeClassName="active">
+                      <StarsIcon /> Top
 										</NavLink>
-									</li>
-									<li>
-										<NavLink to="/about" exact activeClassName="active">
-											<InfoIcon /> About us
+                  </li>
+                  <li>
+                    <NavLink to="/about" exact activeClassName="active">
+                      <InfoIcon /> About us
 										</NavLink>
-									</li>
-								</ul>
-							</ListItemIcon>
-						</ListItem>
-						
-					</List>
-					<Divider />
-				</Drawer>
-			</div>
-			<main className={classes.content}>
-				<div className={classes.toolbar} />
-			</main>
-			<div>
-				<Footer />
-			</div>
-		</div>
-	);
+                  </li>
+                </ul>
+              </ListItemIcon>
+            </ListItem>
+
+          </List>
+          <Divider />
+        </Drawer>
+      </div>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+      </main>
+      <div>
+        <Footer />
+      </div>
+    </div>
+  );
 }

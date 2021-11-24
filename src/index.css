@@ -34,12 +34,14 @@ html {
 	list-style: none;
 	color: #100c08;
 }
+
 .list li {
 	
 	list-style: none;
 	margin-left: -28px;
 	font-weight: bold;
 	padding-top: 20px;
+  letter-spacing: 1px;
 }
 .active {
 	color: #100c08;
