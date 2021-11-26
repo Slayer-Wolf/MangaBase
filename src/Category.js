@@ -79,13 +79,13 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   content: {
-    height: "auto",
-    display: "flex",
-    justifyContent: "left",
-    flexDirection: "row",
-    Width: "100%",
-    flexWrap: "wrap",
-    padding: 20,
+    margin:"200",
+   height: "auto",
+		display: "flex",
+		justifyContent: "left",
+		flexDirection: "row",
+		flexWrap: "wrap",
+padding :'20'
   }, 
 }));
 
@@ -182,6 +182,12 @@ export default function Category() {
       </div>
       <main className={classes.content}>
         <div className={classes.toolbar} />
+        <Cate/ >
+      <Cate/ >
+      <Cate/ >
+      <Cate/ >
+      <Cate/ >
+      <Cate/ >
       </main>
       <div>
         <Footer />
