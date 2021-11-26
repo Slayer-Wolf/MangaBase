@@ -61,7 +61,7 @@ export default function Accord() {
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						Nothing more than an a just a simple developer job in your comppnay
+						Nothing more than an a just a simple developer job in your company
 					</Typography>
 				</AccordionDetails>
 			</Accordion>

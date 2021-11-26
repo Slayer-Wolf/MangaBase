@@ -19,6 +19,7 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StarsIcon from "@material-ui/icons/Stars";
 import InfoIcon from "@material-ui/icons/Info";
 import { NavLink } from "react-router-dom";
+import Cate from "./components/Cate";
 const drawerWidth = 200;
 const useStyles = makeStyles((theme) => ({
   root: {

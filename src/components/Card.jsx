@@ -6,7 +6,6 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { Typography } from "@material-ui/core";
-
 const useStyles = makeStyles({
 	root: {
 		boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.25)",
@@ -23,8 +22,8 @@ const useStyles = makeStyles({
 });
 
 export default function ShowCard(props) {
-	const classes = useStyles();
-	return (
+const classes = useStyles();
+  return (
 		<div>
 			<Card className={classes.root}>
 				<CardActionArea>
@@ -33,8 +32,8 @@ export default function ShowCard(props) {
 						height="150"
 						width="70"
 						component="img"
-						alt={props.alt}
-						image={props.img}
+						alt={props.alt}						
+            image={props.img}
 					/>
 					<CardContent>
 						<CardActions className={classes.data}>
@@ -46,7 +45,7 @@ export default function ShowCard(props) {
 						</CardActions>
 
 						<a className="btn btn-dark link" href={props.link} role="button">
-							Read it
+							Watch It
 						</a>
 					</CardContent>
 				</CardActionArea>
