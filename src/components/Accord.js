@@ -8,7 +8,9 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
+    boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.25)",
 		width: "100%",
+    flexWrap:"wrap" 
 	},
 	heading: {
 		fontSize: theme.typography.pxToRem(15),

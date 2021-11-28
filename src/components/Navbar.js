@@ -73,9 +73,9 @@ const useStyles = makeStyles((theme) => ({
 			duration: theme.transitions.duration.leavingScreen,
 		}),
 		overflowX: "hidden",
-		width: theme.spacing(7) + 1,
+		width: theme.spacing(0) + 1,
 		[theme.breakpoints.up("sm")]: {
-			width: theme.spacing(6) + 1,
+			width: theme.spacing(0) + 1,
 		},
 	},
 	toolbar: {
@@ -93,20 +93,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const ncard = (val, id) => {
-	return (
-		<ShowCard
-			key={id}
-			img={val.img}
-			name={val.name}
-			alt={val.alt}
-			author={val.author}
-			link={val.link}
-		/>
-	);
-};
+
 
 export default function MiniDrawer() {
+
 	const classes = useStyles();
 	const theme = useTheme();
 	const [open, setOpen] = React.useState(false);
@@ -175,8 +165,7 @@ export default function MiniDrawer() {
 								<ul className="list">
 									<li>
 										<NavLink to="/category" exact activeClassName="active">
-											<LibraryBooksIcon />
-											Category
+											<LibraryBooksIcon />  Category
 										</NavLink>
 									</li>
 									<li>
@@ -198,7 +187,7 @@ export default function MiniDrawer() {
 				</Drawer>
 				<main className={classes.content}>
 					<div className={classes.toolbar} />
-					{Api.map(ncard)}
+					<ShowCard/>
 				</main>
 			</div>
 			<Footer />

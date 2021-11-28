@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -7,24 +7,27 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { Typography } from "@material-ui/core";
 import axios from "axios";
+// styling
 const useStyles = makeStyles({
 	root: {
 		boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.25)",
 		width: 200,
-		margin: 70,
+		margin: 50,
 		height: 300,
 		borderRadius: 10,
+    justifyContent:"center"
 	},
 
 	data: {
 		justifyContent: "center",
 		fontFamily: "robota",
+    alignItem:"center"
 	},
 });
-
-export default function ShowCard(props) {
- const[anime, setAnime] = useState([]);
- //Api
+// styling end // 
+export default function ShowCard() {
+const[anime, setAnime] = useState([]);
+ //Api //
 useEffect( () => {
 async function asnew() {
   const options = {
@@ -39,19 +42,21 @@ await axios.request(options).then(function (response) {
 	const ani = response.data;
 const slam = ani.anime;
 setAnime(slam);
-console.log(slam);
 }).catch(function (error) {
 	console.error(error);
 });
 }
 asnew();
  },[]);
- // End //
+ // APi End // 
+
+
 const classes = useStyles();
-  return (
-		anime.map((ele)=>{
+  
       return(
-        <div>
+        anime.map((ele)=>{
+          return(
+            <div>
 			<Card className={classes.root}>
 				<CardActionArea>
 					<CardMedia
@@ -65,22 +70,24 @@ const classes = useStyles();
 					<CardContent>
 						<CardActions className={classes.data}>
 							<Typography
-								style={{ width:"100%", justifyContent: "center", fontWeight: "bold" }}
-							>
+								style={{ width:"auto", justifyContent: "center", fontWeight: "bold" }}>
 								{ele.title}
 							</Typography>
 						</CardActions>
 
-						<a className="btn btn-dark link" href={props.link} role="button">
+						<a className="btn btn-dark link" href={ele.url} role="button">
 							Watch It
 						</a>
 					</CardContent>
 				</CardActionArea>
 			</Card>
 		</div>
+          );
+
+        })
+        
       );
 
 
-    })
-	);
-}
+    }	
+
