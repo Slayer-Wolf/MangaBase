@@ -182,12 +182,7 @@ export default function Category() {
       </div>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Cate/ >
-      <Cate/ >
-      <Cate/ >
-      <Cate/ >
-      <Cate/ >
-      <Cate/ >
+        <Cate/>
       </main>
       <div>
         <Footer />

@@ -19,7 +19,6 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StarsIcon from "@material-ui/icons/Stars";
 import InfoIcon from "@material-ui/icons/Info";
 import ShowCard from "./Card";
-import Api from "./Api";
 import Footer from "./Footer";
 
 import { NavLink } from "react-router-dom";
