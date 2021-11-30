@@ -13,7 +13,7 @@ useEffect( () => {
 async function getdata() {
   const options = {
   method: 'GET',
-  url: 'https://jikan1.p.rapidapi.com/genre/anime/1/1',
+  url: 'https://jikan1.p.rapidapi.com/genre/manga/1/1',
   headers: {
     'x-rapidapi-host': 'jikan1.p.rapidapi.com',
     'x-rapidapi-key': 'e76062bcfcmshcb4cb7081fb349cp1ce701jsn7e0574d996b4'
@@ -21,9 +21,9 @@ async function getdata() {
 };
 await axios.request(options).then(function (response) {
 	const mang = response.data;
-  const slam = mang.anime.genres;
-  setGenre(slam)
+const slam = mang.manga.genres[];
   console.log(slam);
+  setGenre(slam)
 }).catch(function (error) {
 	console.error(error);
 });
@@ -44,14 +44,14 @@ getdata();
         component='img' // add this line to use <img />
         height="150"
 						width="70"
-        image={e.image_url}
+        // image="new"
         classes={styles}
       />
       <Box position={'relative'}>
         	<Typography
 								style={{ width:"100%", justifyContent: "center", fontWeight: "bold" }}
 							>
-								{e.type}
+								{e.name}
 							</Typography>
         
       </Box>
