@@ -6,8 +6,7 @@ import { Typography } from "@material-ui/core";
 import axios from "axios";
 const Cate = () => {
 
-const [genre, setGenre]= useState([]); 
-
+const [g, setG]= useState([]);
  //Api
 useEffect( () => {
 async function getdata() {
@@ -21,9 +20,8 @@ async function getdata() {
 };
 await axios.request(options).then(function (response) {
 	const mang = response.data;
-const slam = mang.manga.genres[];
-  console.log(slam);
-  setGenre(slam)
+  console.log(mang.manga);
+  setG(mang.manga);
 }).catch(function (error) {
 	console.error(error);
 });
@@ -36,22 +34,22 @@ getdata();
   
 
   return (
-    genre.map((e)=>{
+    g.map((e)=>{
       return(  
-          <Box position={'relative'} width={'200'} height={'250'} p={3} marginTop={9} marginLeft={9} >
+          <Box position={'relative'} width={'200'} height={'250'} p={3} marginTop={9} marginLeft={9} key={e.mal_id} >
       <CardMedia
 
         component='img' // add this line to use <img />
         height="150"
 						width="70"
-        // image="new"
+        image={e.image_url}
         classes={styles}
       />
       <Box position={'relative'}>
         	<Typography
 								style={{ width:"100%", justifyContent: "center", fontWeight: "bold" }}
 							>
-								{e.name}
+								{e.genres[0].name}
 							</Typography>
         
       </Box>

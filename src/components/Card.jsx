@@ -54,34 +54,36 @@ asnew();
 const classes = useStyles();
   
       return(
-        anime.map((ele)=>{
+        anime.map((e)=>{
           return(
-            <div>
-			<Card className={classes.root}>
-				<CardActionArea>
-					<CardMedia
+            
+            <div key={e.mal_id}>
+			<Card className={classes.root}  >
+				<CardActionArea  >
+					<CardMedia 
 						className={classes.media}
 						height="150"
 						width="70"
 						component="img"
-						alt={ele.title}						
-            image={ele.image_url}
+						alt={e.title}						
+            image={e.image_url}
 					/>
 					<CardContent>
 						<CardActions className={classes.data}>
 							<Typography
 								style={{ width:"auto", justifyContent: "center", fontWeight: "bold" }}>
-								{ele.title}
+								{e.title}
 							</Typography>
 						</CardActions>
 
-						<a className="btn btn-dark link" href={ele.url} role="button">
+						<a className="btn btn-dark link" href={e.url} role="button">
 							Watch It
 						</a>
 					</CardContent>
 				</CardActionArea>
 			</Card>
 		</div>
+
           );
 
         })
