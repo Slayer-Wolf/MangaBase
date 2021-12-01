@@ -1,12 +1,13 @@
 import React, { useState,useEffect} from 'react';
 import Box from '@material-ui/core/Box';
+import  Button  from '@mui/material/Button';
 import CardMedia from '@material-ui/core/CardMedia';
 import { useCoverCardMediaStyles } from '@mui-treasury/styles/cardMedia/cover';
 import { Typography } from "@material-ui/core";
 import axios from "axios";
 const Cate = () => {
 
-const [g, setG]= useState([]);
+const [cates, setCates] = useState([]);
  //Api
 useEffect( () => {
 async function getdata() {
@@ -19,9 +20,8 @@ async function getdata() {
   }
 };
 await axios.request(options).then(function (response) {
-	const mang = response.data;
-  console.log(mang.manga);
-  setG(mang.manga);
+console.log(response.data.manga)
+setCates(response.data.manga)
 }).catch(function (error) {
 	console.error(error);
 });
@@ -31,12 +31,10 @@ getdata();
  // End //
 
   const styles = useCoverCardMediaStyles();
-  
-
   return (
-    g.map((e)=>{
-      return(  
-          <Box position={'relative'} width={'200'} height={'250'} p={3} marginTop={9} marginLeft={9} key={e.mal_id} >
+    cates.map((e)=>{
+      return(
+ <Box position={'relative'}  p={1} marginTop={9} marginLeft={9}  key={e.mal_id}  marginBottom={5} style={{border: "2px solid black"}} >
       <CardMedia
 
         component='img' // add this line to use <img />
@@ -45,19 +43,25 @@ getdata();
         image={e.image_url}
         classes={styles}
       />
-      <Box position={'relative'}>
+      <Box position={'relative'}  >
         	<Typography
-								style={{ width:"100%", justifyContent: "center", fontWeight: "bold" }}
-							>
-								{e.genres[0].name}
-							</Typography>
-        
+								style={{ width:"auto", justifyContent: "center", fontWeight: "bold", color:"black", padding:'2px' } }>
+                <ul className='l1'>
+                {e.genres.map((sub)=>{
+                  return(
+                 <li>
+                  <Button variant="outlined" href={sub.mal_url}>{sub.name}</Button>
+                  </li>
+                  )
+                  
+                })}
+                </ul>
+              </Typography>        
       </Box>
     </Box>
-      );})
-
-
-  );
+      );
+    } )        
+      );
 };
 
 export default Cate;
