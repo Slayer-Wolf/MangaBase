@@ -19,7 +19,7 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StarsIcon from "@material-ui/icons/Stars";
 import InfoIcon from "@material-ui/icons/Info";
 import { NavLink } from "react-router-dom";
-import Footer from "./components/Footer";
+import RoundSocialLink from "./components/Footer";
 import Accord from "./components/Accord";
 
 const drawerWidth = 200;
@@ -87,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
 		flexWrap: "wrap",
 		padding: 20,
 		margin: 50,
+    display:"flex"
     
 	},
 }));
@@ -187,7 +188,7 @@ export default function About() {
 				<Accord />
 			</main>
 			<div>
-				<Footer />
+				<RoundSocialLink />
 			</div>
 		</div>
 	);

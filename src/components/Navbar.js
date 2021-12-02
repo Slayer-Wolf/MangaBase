@@ -19,7 +19,7 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StarsIcon from "@material-ui/icons/Stars";
 import InfoIcon from "@material-ui/icons/Info";
 import ShowCard from "./Card";
-import Footer from "./Footer";
+import RoundSocialLink from "./Footer";
 
 import { NavLink } from "react-router-dom";
 const drawerWidth = 200;
@@ -190,7 +190,7 @@ export default function MiniDrawer() {
 					<ShowCard/>
 				</main>
 			</div>
-			<Footer />
+			<RoundSocialLink />
 		</div>
 	);
 }

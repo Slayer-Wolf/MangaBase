@@ -1,23 +1,33 @@
-import FacebookIcon from "@material-ui/icons/Facebook";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import React from 'react';
+import {
+  SocialProvider,
+  SocialLink,
+} from '@mui-treasury/components/socialLink';
+import { useRoundSocialLinkStyles } from '@mui-treasury/styles/socialLink/round';
 
-const Footer = () => {
-	return (
-		<>
-			<div className="foot">
-				<a href="/">
-					<FacebookIcon />
-				</a>
-				<a href="/">
-					<LinkedInIcon />
-				</a>
-				<a href="/">
-					<InstagramIcon />
-				</a>
-			</div>
-		</>
-	);
+const RoundSocialLink =()=> {
+  return (
+    <div className="foot">
+      <SocialProvider useStyles={useRoundSocialLinkStyles}>
+        <SocialLink
+          brand={'FacebookCircle'}
+          href={"#"}
+        />
+        <SocialLink brand={'Twitter'} href={'#'} />
+        <SocialLink
+          brand={'Instagram'}
+          href={'#'}
+        />
+        <SocialLink
+          brand={'LinkedIn'}
+          href={'https://www.linkedin.com/in/siriwat-kunaporn-1b4095158/'}
+        />
+        <SocialLink
+          brand={'GithubCircle'}
+          href={"https://github.com/Slayer-Wolf"}
+        />
+      </SocialProvider>
+    </div>
+  );
 };
-
-export default Footer;
+export default RoundSocialLink;

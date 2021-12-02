@@ -14,7 +14,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import Footer from "./components/Footer";
+import RoundSocialLink from "./components/Footer";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StarsIcon from "@material-ui/icons/Stars";
 import InfoIcon from "@material-ui/icons/Info";
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 2,
+    flexShrink: 0,
     whiteSpace: "wrap",
   },
   drawerOpen: {
@@ -185,7 +185,7 @@ export default function Category() {
         <Cate/>
       </main>
       <div>
-        <Footer />
+        <RoundSocialLink />
       </div>
     </div>
   );

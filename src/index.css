@@ -19,10 +19,10 @@ body{
 	text-align: center;
 }
 .foot {
-	height: 30px;
+  padding: 2px;
+	height: 50px;
 	width: 100%;
-	background-color: #a4508b;
-	background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+	background-color: #9650a4;
 	text-align: center;
 	border: 1px solid #33d1c4;
 }
