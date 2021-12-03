@@ -52,8 +52,16 @@ const useStyles = makeStyles({
 	},
   cont:{
     padding:5
-  }
- 
+  },
+ rate:{
+   display:"flex",
+ },
+ btn:{
+   
+   display:"flex",
+   display:"relative"
+
+ }
 });
 // styling end // 
 
@@ -75,6 +83,7 @@ await axios.request(options).then(function (response) {
 	const ani = response.data;
 const slam = ani.anime;
 setAnime(slam);
+console.log(slam);
 }).catch(function (error) {
 	console.error(error);
 });
@@ -104,7 +113,6 @@ const classes = useStyles();
 								style={{ justifyContent: "center", fontWeight: "bold" }}>
 								{e.title}
 							</Typography>
-
 						</CardActions>
              <Typography variant="caption" style={{fontWeight: "bold"}}>Genre:</Typography>
           {e.genres.map((f)=>{                
@@ -113,35 +121,29 @@ const classes = useStyles();
                    <Box 
       sx={{
         display: 'inline-block',
-        typography:"caption",
+        justifyContent:"left",
         }} >
-        
-        <Breadcrumbs>
-              
+        <Breadcrumbs>              
               <StyledBreadcrumb component="a" href={f.url} label={f.name} />
               </Breadcrumbs>
    </Box>
    </React.Fragment>)
               })}
- 
-						
-					</CardContent>
-          
+              <div className={classes.rate} >
+              <Typography variant="caption" style={{fontWeight: "bold"}}> Rating:{e.score}</Typography>
+              </div>
+              <div className={classes.rate} >
+              <Typography variant="caption" style={{fontWeight: "bold"}}> Episodes:{e.episodes}</Typography>
+              </div>
+					</CardContent>          
 				</CardActionArea>
-        <div style={{postion:"fixed"}}>
+        <div className={classes.btn}>
           <a className="btn btn-dark link" href={e.url} role="button">
 							Watch It
 						</a>
             </div> 
 			</Card>  
 		</React.Fragment>
-
-          );
-
-        })
-        
-      );
-
-
-    }	
+    );})
+      );}	
 
