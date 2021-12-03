@@ -7,7 +7,7 @@ import { useRoundSocialLinkStyles } from '@mui-treasury/styles/socialLink/round'
 
 const RoundSocialLink =()=> {
   return (
-    <div className="foot">
+    <div className="navbar fixed-bottom foot">
       <SocialProvider useStyles={useRoundSocialLinkStyles}>
         <SocialLink
           brand={'FacebookCircle'}
@@ -20,7 +20,7 @@ const RoundSocialLink =()=> {
         />
         <SocialLink
           brand={'LinkedIn'}
-          href={'https://www.linkedin.com/in/siriwat-kunaporn-1b4095158/'}
+          href={'linkedin.com/in/darshan-talwar-2b167a132'}
         />
         <SocialLink
           brand={'GithubCircle'}

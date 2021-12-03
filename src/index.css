@@ -19,21 +19,17 @@ body{
 	text-align: center;
 }
 .foot {
-  padding: 2px;
-	height: 50px;
-	width: 100%;
-	background-color: #9650a4;
-	text-align: center;
-	border: 1px solid #33d1c4;
+  padding: 5px;
+	height: 45px;
+  display: flex;
+   justify-self: space-around center;
+   width: 100%;
+	background-color: #10b6d7;
 }
 
 .foot a {
-	display: inline-flex;
-	flex-direction: row;
-	margin: 1.5px 15px;
-	text-decoration: none;
-	list-style: none;
-	color: #100c08;
+		color: #100c08;
+    border: 1px #000808 solid;
 }
 
 .list li {

@@ -1,32 +1,65 @@
 import React, {useEffect, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActionArea from"@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { Typography } from "@material-ui/core";
+import Box from '@mui/material/Box';
 import axios from "axios";
-// styling
+import { emphasize, styled } from '@mui/material/styles';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Chip from '@mui/material/Chip';
+
+// Breadcrumbs style//
+const StyledBreadcrumb = styled(Chip)(({ theme }) => {
+  const backgroundColor =
+    theme.palette.mode === 'light'
+      ? theme.palette.grey[100]
+      : theme.palette.grey[800];
+  return {
+    backgroundColor,
+    height: theme.spacing(3),
+    color: theme.palette.text.primary,
+    fontWeight: theme.typography.fontWeightRegular,
+    '&:hover, &:focus': {
+      backgroundColor: emphasize(backgroundColor, 0.06),
+    },
+    '&:active': {
+      boxShadow: theme.shadows[1],
+      backgroundColor: emphasize(backgroundColor, 0.12),
+    },
+  };
+});
+// styling End//
+
+// Card styling //
 const useStyles = makeStyles({
 	root: {
 		boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.25)",
-		width: 200,
+		width: 250,
 		margin: 50,
-		height: 300,
+		height: 350,
 		borderRadius: 10,
-    justifyContent:"center"
+    padding:0
 	},
 
 	data: {
 		justifyContent: "center",
 		fontFamily: "robota",
-    alignItem:"center"
+    alignItem:"center",
 	},
+  cont:{
+    padding:5
+  }
+ 
 });
 // styling end // 
+
 export default function ShowCard() {
 const[anime, setAnime] = useState([]);
+
  //Api //
 useEffect( () => {
 async function asnew() {
@@ -51,38 +84,57 @@ asnew();
  // APi End // 
 
 
-const classes = useStyles();
-  
+const classes = useStyles();  
+//  Main Function //
       return(
         anime.map((e)=>{
           return(
-            
-            <div key={e.mal_id}>
+            <React.Fragment key={e.mal_id}>
 			<Card className={classes.root}  >
 				<CardActionArea  >
 					<CardMedia 
 						className={classes.media}
 						height="150"
-						width="70"
-						component="img"
-						alt={e.title}						
+						component="img"				
             image={e.image_url}
 					/>
-					<CardContent>
+					<CardContent className={classes.cont} >
 						<CardActions className={classes.data}>
-							<Typography
-								style={{ width:"auto", justifyContent: "center", fontWeight: "bold" }}>
+							<Typography component="div"
+								style={{ justifyContent: "center", fontWeight: "bold" }}>
 								{e.title}
 							</Typography>
-						</CardActions>
 
-						<a className="btn btn-dark link" href={e.url} role="button">
+						</CardActions>
+             <Typography variant="caption" style={{fontWeight: "bold"}}>Genre:</Typography>
+          {e.genres.map((f)=>{                
+                return (
+                  <React.Fragment key={f.mal_id}>                 
+                   <Box 
+      sx={{
+        display: 'inline-block',
+        typography:"caption",
+        }} >
+        
+        <Breadcrumbs>
+              
+              <StyledBreadcrumb component="a" href={f.url} label={f.name} />
+              </Breadcrumbs>
+   </Box>
+   </React.Fragment>)
+              })}
+ 
+						
+					</CardContent>
+          
+				</CardActionArea>
+        <div style={{postion:"fixed"}}>
+          <a className="btn btn-dark link" href={e.url} role="button">
 							Watch It
 						</a>
-					</CardContent>
-				</CardActionArea>
-			</Card>
-		</div>
+            </div> 
+			</Card>  
+		</React.Fragment>
 
           );
 
