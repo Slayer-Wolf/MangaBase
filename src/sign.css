@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Itim&display=swap');
+
+body{
+  	margin: 0;
+	padding: 0;
+	box-sizing: border-box !important;
+  font-family: 'Caveat', cursive;
+font-family: 'Itim', cursive;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  height: 100%;
+background: #7F7FD5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 100%;
+}
+
+.form-signin {
+  border: 3px solid rgb(24, 24, 23);
+  border-radius:15px;
+  width: 300px;
+  max-width: 330px;
+  padding: 15px;
+  margin-top: 50%;
+background: #8360c3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+}
+
+.form-signin .checkbox {
+  font-weight: 500;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.success{
+  font-family: 'Caveat', cursive;
+  color:white;
+}
+.sign{
+  margin-top: 10px;
+  padding: 2px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+ 
+}
+.regis{
+   color:rgb(189, 6, 6);
+}

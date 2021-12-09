@@ -34,8 +34,7 @@ export default function Accord() {
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						That's for you to find out and me to know if you already found it
-						out.
+						My name is Darshan Talwar recently graduated from Icfai university, Jaipur with Btech CS degree in 2021, i have experience with HTML CSS & Javascript as well since i have made few projects based onn these and recently shifted towards javascript framework ReactJS i don't have any official work experience but i made projects by myself for hands on experience and knowledge.
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
@@ -49,7 +48,7 @@ export default function Accord() {
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						Just a Front-end developer and money maker through my skills
+						Just a Front-end developer eager to learn and enhance my skills through hard work with a hint of smartness to ease it out.
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
@@ -59,11 +58,11 @@ export default function Accord() {
 					aria-controls="panel2a-content"
 					id="panel2a-header"
 				>
-					<Typography className={classes.heading}>WHat i Want?</Typography>
+					<Typography className={classes.heading}>What i Want?</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						Nothing more than an a just a simple developer job in your company
+						To achieve my goal to be a good front developer and soon to be full stack as well to keep up with all the technology that are best suited for web Devopment 
 					</Typography>
 				</AccordionDetails>
 			</Accordion>

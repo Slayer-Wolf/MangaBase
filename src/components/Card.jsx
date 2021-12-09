@@ -11,7 +11,6 @@ import axios from "axios";
 import { emphasize, styled } from '@mui/material/styles';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Chip from '@mui/material/Chip';
-
 // Breadcrumbs style//
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
   const backgroundColor =
@@ -40,9 +39,10 @@ const useStyles = makeStyles({
 		boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.25)",
 		width: 250,
 		margin: 50,
-		height: 350,
+		height: 500,
 		borderRadius: 10,
-    padding:0
+    padding:0,
+    position:"relative"
 	},
 
 	data: {
@@ -50,24 +50,32 @@ const useStyles = makeStyles({
 		fontFamily: "robota",
     alignItem:"center",
 	},
-  cont:{
-    padding:5
-  },
+
  rate:{
    display:"flex",
+   position:"relative",
+   textAlign:"center",
+   margin:2,
+   padding:3
  },
- btn:{
-   
+ rate2:{
+   padding:2,
+   margin:2,
+ },
+ btn:{   
    display:"flex",
-   position:"relative"
-
+   position:"absolute",
+   bottom:10,
+   left:70,
+    textAlign:"center"
  }
 });
 // styling end // 
 
 export default function ShowCard() {
-const[anime, setAnime] = useState([]);
 
+
+const[anime, setAnime] = useState([]);
  //Api //
 useEffect( () => {
 async function asnew() {
@@ -103,7 +111,7 @@ const classes = useStyles();
 				<CardActionArea  >
 					<CardMedia 
 						className={classes.media}
-						height="150"
+						height="200"
 						component="img"				
             image={e.image_url}
 					/>
@@ -117,12 +125,14 @@ const classes = useStyles();
              <Typography variant="caption" style={{fontWeight: "bold"}}>Genre:</Typography>
           {e.genres.map((f)=>{                
                 return (
-                  <React.Fragment key={f.mal_id}>                 
-                   <Box 
+                  <React.Fragment key={f.mal_id}>     
+                   <Box className={classes.rate2}
       sx={{
-        display: 'inline-block',
+        display: 'inline-flex',
         justifyContent:"left",
-        }} >
+        margin:0
+        }}>
+
         <Breadcrumbs>              
               <StyledBreadcrumb component="a" href={f.url} label={f.name} />
               </Breadcrumbs>
@@ -135,11 +145,18 @@ const classes = useStyles();
               <div className={classes.rate} >
               <Typography variant="caption" style={{fontWeight: "bold"}}> Episodes:{e.episodes}</Typography>
               </div>
+               <div className={classes.rate} >
+              <Typography variant="caption" style={{fontWeight: "bold"}}> Source:{e.source}</Typography>
+              </div>
+               <div className={classes.rate} >
+              <Typography variant="caption" style={{fontWeight: "bold"}}> Type:{e.type}</Typography>
+              </div>
+
 					</CardContent>          
 				</CardActionArea>
         <div className={classes.btn}>
           <a className="btn btn-dark link" href={e.url} role="button">
-							Watch It
+							READ
 						</a>
             </div> 
 			</Card>  
