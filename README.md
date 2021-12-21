@@ -1,5 +1,9 @@
+![image](https://user-images.githubusercontent.com/87927240/146935745-d3280eb5-90ac-474a-bb9b-ba10978dafcc.png)
+=> Created registration page with login method allowing the user to have security
+
 
 ![image](https://user-images.githubusercontent.com/87927240/144968794-e3868520-5df1-48e5-a53a-4d6e747ddcea.png)
+
 
 => Deveoped a manga(japanese comics) website with all the Top manga in world using the APi from Jikan APi which is Api used by the MAL(myanimelist) webiste
 ![image](https://user-images.githubusercontent.com/87927240/144968995-45e0a704-5d24-4656-b7b9-d6ffe3bc6310.png)
