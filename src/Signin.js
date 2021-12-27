@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import {useHistory} from "react-router-dom";
 import "./sign.css";
+import {Link} from "react-router-dom";
 const Signin = () => {
   const history= useHistory();
 const [email, setEmail] = useState('');
@@ -15,6 +16,7 @@ if(!email || !password){
   alert("Please Enter the Email and Password")
 }else if(password !== passWord || email !== mailid ){
   alert("invalid id or Password");
+
 }
 else{
   history.push("./top");
@@ -39,6 +41,7 @@ return (
     </div>
     <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
   </form>
+<Link className="regis" to="./">wana Register?</Link>
 </main>
 </div>
 )

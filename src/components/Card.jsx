@@ -38,7 +38,7 @@ const useStyles = makeStyles({
 	root: {
 		boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.25)",
 		width: 250,
-		margin: 50,
+		margin: 25,
 		height: 500,
 		borderRadius: 10,
     padding:0,
@@ -91,7 +91,6 @@ await axios.request(options).then(function (response) {
 	const ani = response.data;
 const slam = ani.anime;
 setAnime(slam);
-console.log(slam);
 }).catch(function (error) {
 	console.error(error);
 });

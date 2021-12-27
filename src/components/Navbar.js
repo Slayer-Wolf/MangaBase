@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }from "react";
 import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -19,16 +19,19 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import StarsIcon from "@material-ui/icons/Stars";
 import InfoIcon from "@material-ui/icons/Info";
 import ShowCard from "./Card";
+import Fab from '@mui/material/Fab';
+import LogoutIcon from '@mui/icons-material/Logout';
 import RoundSocialLink from "./Footer";
+import {NavLink} from "react-router-dom";
+import {useHistory} from "react-router-dom";
+import Box from '@mui/material/Box';
 
-import { NavLink } from "react-router-dom";
+
 const drawerWidth = 200;
-
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: "flex",
-		boxSizing: "border-box",
-		
+		boxSizing: "border-box",		
 	},
 
 	appBar: {
@@ -94,12 +97,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
 export default function MiniDrawer() {
-
+ const history = useHistory();
 	const classes = useStyles();
 	const theme = useTheme();
-	const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = useState(false);
+
+  const log =()=>{   
+    alert("you are logging Out"); 
+    history.push('./signin');
+
+
+  }
 
 	const handleDrawerOpen = () => {
 		setOpen(true);
@@ -178,6 +187,15 @@ export default function MiniDrawer() {
 											<InfoIcon /> About us
 										</NavLink>
 									</li>
+                  <li>
+                  <Box sx={{ '& > :not(style)': { m: 1 } }}>
+   <Fab variant="extended">
+        <LogoutIcon sx={{ mr: 1 }} onClick={log} />
+        Logout
+
+      </Fab>
+</Box>
+                  </li>
 								</ul>
 							</ListItemIcon>
 							<ListItemText />
