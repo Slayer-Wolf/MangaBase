@@ -147,9 +147,7 @@ const classes = useStyles();
                <div className={classes.rate} >
               <Typography variant="caption" style={{fontWeight: "bold"}}> Source:{e.source}</Typography>
               </div>
-               <div className={classes.rate} >
-              <Typography variant="caption" style={{fontWeight: "bold"}}> Type:{e.type}</Typography>
-              </div>
+               
 
 					</CardContent>          
 				</CardActionArea>

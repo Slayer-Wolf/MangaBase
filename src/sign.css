@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Itim&display=swap');
 
+
+
 body{
   	margin: 0;
 	padding: 0;
@@ -8,14 +10,11 @@ body{
 font-family: 'Itim', cursive;
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 30px;
   padding-bottom: 40px;
   height: 100%;
-background: #7F7FD5;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  width: 100%;
-  height: 100%;
+     background: url("https://images7.alphacoders.com/737/thumb-1920-737400.jpg") no-repeat center center fixed;
+ 
 }
 
 .form-signin {
@@ -24,13 +23,7 @@ background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+
   width: 300px;
   max-width: 330px;
   padding: 15px;
-  margin-top: 50%;
-background: #8360c3;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
+  margin-top: 20%;
 }
 
 .form-signin .checkbox {
